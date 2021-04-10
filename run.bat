@@ -1,0 +1,1 @@
+START %~dp0\FirmEmployee\bin\Debug\netcoreapp3.1\FirmEmployee.exe
