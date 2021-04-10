@@ -133,7 +133,7 @@ namespace FirmEmployee
 
         public static void Remove(Firm firm)
         {
-            string name = "", surname = "", experience = "";
+            string name = "", surname = "";
             Console.WriteLine("Input employee data.");
             Console.Write("Input name: ");
             name = Console.ReadLine();
