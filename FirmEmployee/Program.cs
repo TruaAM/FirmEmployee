@@ -97,8 +97,37 @@ namespace FirmEmployee
             Console.Write("Input experience: ");
             experience = Console.ReadLine();
 
+            string role = "";
+            bool check = true;
+            do
+            {
+                Console.WriteLine("Chose, what kind of employees you want to add.\nYour variants: employee, worker, manager, foreman.\n");
+                role = Console.ReadLine();
 
-            firm += new Employee { Name = name, Surname = surname, Experience = experience };
+                switch (role)
+                {
+                    case "employee":
+                        firm += new Employee { Name = name, Surname = surname, Experience = experience };
+                        check = false;
+                        break;
+                    case "worker":
+                        firm += new Worker { Name = name, Surname = surname, Experience = experience };
+                        check = false;
+                        break;
+                    case "manager":
+                        firm += new Manager { Name = name, Surname = surname, Experience = experience };
+                        check = false;
+                        break;
+                    case "foreman":
+                        firm += new Foreman { Name = name, Surname = surname, Experience = experience };
+                        check = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input. Try next time.");
+                        check = true;
+                        break;
+                }
+            } while (check);
         }
 
         public static void Remove(Firm firm)
@@ -202,7 +231,7 @@ namespace FirmEmployee
 
         public static void Help()
         {
-            Console.WriteLine("There are explanations for commands.");
+            Console.WriteLine("Your start in main-menu. There are explanations for main-menu's commands.");
             Console.WriteLine("Commands: \n.add\t - this command allows you to add new employee to firm;" +
                                         "\n.remove\t - this command allows you to remove existing employee from firm;" +
                                         "\n.work\t - this command allows you to make all employees in firm work;" +
@@ -212,6 +241,8 @@ namespace FirmEmployee
                                         "\n.show\t - this command allows you look at list of employees in firm;" +
                                         "\n.count\t - this command allows you count all employees in firm;" +
                                         "\n.exit\t - this command allows you stop this project working;");
+            Console.WriteLine("You might be forbid from using others main-menu commands, until chosen command will executed completely.\n" +
+                "Example: .add will be completed, only when you input all new dates for new employee.");
         }
     }
 }

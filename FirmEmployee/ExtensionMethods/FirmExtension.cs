@@ -9,7 +9,6 @@ namespace FirmEmployee.ExtensionMethods
         public static bool CheckEmployee(this Firm firm, Employee employee)
         {
             if (firm.Employees.Where(x => x.Name == employee.Name && x.Surname == employee.Surname).FirstOrDefault() == null)
-            //if (firm.Employees.Where(x => x == employee).FirstOrDefault() == null)
             {
                 return false;
             }

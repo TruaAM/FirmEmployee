@@ -13,7 +13,6 @@ namespace FirmEmployee.GenericMethods
 
         public IEnumerable<T> GetAllByType(IEnumerable<T> employees, string typeName)
         {
-            //return from e in employees where e.GetType().Name == typeName select e;
             return employees.Where(e => e.GetType().Name == typeName).ToList();
         }
     }
