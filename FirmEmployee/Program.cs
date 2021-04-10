@@ -23,6 +23,7 @@ namespace FirmEmployee
 
             Firm firm = new Firm();
             List<Employee> employees = new List<Employee>() {
+                new Employee { Name = "Employee", Surname = "SurEmployee", Experience = "ExE" },
                 new Worker { Name = "Worker", Surname = "SurWorker", Experience = "ExW" },
                 new Manager { Name = "Manager", Surname = "SurManager", Experience = "ExM" },
                 new Foreman { Name = "Foreman", Surname = "SurForeman", Experience = "ExF" }
